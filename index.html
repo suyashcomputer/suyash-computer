@@ -69,6 +69,46 @@
       border-radius:12px;
       box-shadow:0 6px 15px rgba(0,0,0,0.08);
     }
+/* MOBILE EXTRA FEATURES */
+@media (max-width: 768px){
+  nav{
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .call-bar{
+    display:flex;
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    background:#2563eb;
+    color:#fff;
+    justify-content:space-around;
+    align-items:center;
+    padding:10px 0;
+    z-index:2000;
+  }
+
+  body{
+    padding-bottom:60px;
+  }
+}
+
+.dark-toggle{
+  position:fixed;
+  top:80px;
+  right:15px;
+  background:#111827;
+  color:#fff;
+  padding:8px 12px;
+  border-radius:20px;
+  cursor:pointer;
+  font-size:12px;
+  z-index:3000;
+}
+
 
     /* ===== SLIDER GALLERY (NEW ADDITION) ===== */
     .slider{
