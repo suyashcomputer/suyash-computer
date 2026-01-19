@@ -69,14 +69,25 @@
       border-radius:12px;
       box-shadow:0 6px 15px rgba(0,0,0,0.08);
     }
-/* MOBILE EXTRA FEATURES */
+/* ===============================
+   MOBILE EXTRA FEATURES PACK
+================================ */
+
+/* Sticky Mobile Menu */
 @media (max-width: 768px){
   nav{
     position: sticky;
     top: 0;
     z-index: 1000;
   }
+}
 
+/* Bottom Call Now Bar (Mobile only) */
+.call-bar{
+  display:none;
+}
+
+@media (max-width: 768px){
   .call-bar{
     display:flex;
     position:fixed;
@@ -90,6 +101,64 @@
     padding:10px 0;
     z-index:2000;
   }
+  .call-bar a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:bold;
+    font-size:14px;
+  }
+  body{
+    padding-bottom:60px; /* space for call bar */
+  }
+}
+
+/* Image Performance */
+img{
+  max-width:100%;
+  height:auto;
+  loading:lazy;
+}
+
+/* Dark Mode */
+body.dark{
+  background:#0f172a;
+  color:#e5e7eb;
+}
+body.dark section{
+  background:#1e293b;
+}
+body.dark nav{
+  background:#020617;
+}
+body.dark a{
+  color:#93c5fd;
+}
+body.dark .card{
+  background:#020617;
+}
+
+/* Dark Mode Button */
+.dark-toggle{
+  position:fixed;
+  top:80px;
+  right:15px;
+  background:#111827;
+  color:#fff;
+  padding:8px 12px;
+  border-radius:20px;
+  cursor:pointer;
+  font-size:12px;
+  z-index:3000;
+
+  }
+<!-- Dark Mode Toggle -->
+<div class="dark-toggle" onclick="toggleDark()">🌙 Dark</div>
+
+<!-- Bottom Call Bar (Mobile) -->
+<div class="call-bar">
+  <a href="tel:9422450480">📞 Call Now</a>
+  <a href="https://wa.me/919422450480" target="_blank">💬 WhatsApp</a>
+</div>
 
   body{
     padding-bottom:60px;
