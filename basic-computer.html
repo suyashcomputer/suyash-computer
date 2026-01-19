@@ -3,38 +3,71 @@
 <head>
 <meta charset="UTF-8">
 <title>Basic Computer Course | Suyash Computer</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
-body{font-family:Arial;background:#f1f5f9;margin:0}
-header{background:#0f766e;color:#fff;padding:30px;text-align:center}
+body{margin:0;font-family:Arial;background:#f1f5f9}
+header{background:#0f766e;color:#fff;text-align:center;padding:40px 20px}
 section{background:#fff;max-width:1000px;margin:30px auto;padding:30px;border-radius:14px}
 h2{color:#0f766e}
-a{color:#0f766e;font-weight:bold;text-decoration:none}
+ul{line-height:1.8}
+.lang{display:none}
+.lang-buttons{text-align:right;margin-bottom:20px}
+.lang-buttons button{padding:8px 14px;margin-left:6px;border:none;border-radius:6px;font-weight:bold}
+.active{background:#0f766e;color:#fff}
+.whatsapp{position:fixed;right:20px;bottom:20px;background:#25D366;color:#fff;padding:14px 18px;border-radius:50px;text-decoration:none;font-weight:bold}
+.back{color:#0f766e;font-weight:bold;text-decoration:none}
 </style>
+
+<script>
+function showLang(l){
+document.getElementById('en').style.display='none';
+document.getElementById('mr').style.display='none';
+document.getElementById(l).style.display='block';
+document.getElementById('btn-en').classList.remove('active');
+document.getElementById('btn-mr').classList.remove('active');
+document.getElementById('btn-'+l).classList.add('active');
+}
+</script>
 </head>
-<body>
+
+<body onload="showLang('en')">
 
 <header>
 <h1>Basic Computer Course</h1>
-<p>Computer Fundamentals for Beginners</p>
+<p>Computer Fundamentals</p>
 </header>
 
 <section>
-<h2>Course Details</h2>
-<p>नवीन विद्यार्थ्यांसाठी basic computer knowledge.</p>
+<div class="lang-buttons">
+<button id="btn-en" onclick="showLang('en')">English</button>
+<button id="btn-mr" onclick="showLang('mr')">मराठी</button>
+</div>
 
-<h2>You Will Learn</h2>
+<div id="en" class="lang">
 <ul>
 <li>Computer Basics</li>
 <li>Windows</li>
 <li>MS Office</li>
 <li>Internet & Email</li>
 </ul>
+<p><b>Duration:</b> 1–2 Months</p>
+</div>
 
-<h2>Duration</h2>
-<p>1–2 Months</p>
+<div id="mr" class="lang">
+<ul>
+<li>संगणक मूलतत्त्वे</li>
+<li>Windows वापर</li>
+<li>MS Office</li>
+<li>Internet व Email</li>
+</ul>
+<p><b>कालावधी:</b> १–२ महिने</p>
+</div>
 
-<a href="index.html">← Back to Home</a>
+<a class="back" href="index.html">← Back to Home</a>
 </section>
+
+<a class="whatsapp" href="https://wa.me/919422450480?text=I%20want%20Basic%20Computer%20course%20details" target="_blank">WhatsApp</a>
 
 </body>
 </html>

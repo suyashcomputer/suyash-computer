@@ -26,19 +26,31 @@ section{
 }
 h2{color:#1e40af;}
 ul{line-height:1.8;}
-.lang{
-  background:#eef2ff;
-  padding:15px;
-  border-radius:10px;
+
+.lang-buttons{
+  text-align:right;
   margin-bottom:20px;
 }
-.back{
-  display:inline-block;
-  margin-top:20px;
-  text-decoration:none;
-  color:#2563eb;
+.lang-buttons button{
+  padding:8px 14px;
+  margin-left:6px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
   font-weight:bold;
 }
+.lang-buttons .active{
+  background:#2563eb;
+  color:#fff;
+}
+.lang-buttons button:not(.active){
+  background:#e5e7eb;
+}
+
+.lang{
+  display:none;
+}
+
 .whatsapp{
   position:fixed;
   right:20px;
@@ -50,10 +62,29 @@ ul{line-height:1.8;}
   text-decoration:none;
   font-weight:bold;
 }
+.back{
+  display:inline-block;
+  margin-top:20px;
+  text-decoration:none;
+  color:#2563eb;
+  font-weight:bold;
+}
 </style>
+
+<script>
+function showLang(lang){
+  document.getElementById("en").style.display = "none";
+  document.getElementById("mr").style.display = "none";
+  document.getElementById(lang).style.display = "block";
+
+  document.getElementById("btn-en").classList.remove("active");
+  document.getElementById("btn-mr").classList.remove("active");
+  document.getElementById("btn-"+lang).classList.add("active");
+}
+</script>
 </head>
 
-<body>
+<body onload="showLang('en')">
 
 <header>
   <h1>MS-CIT Course</h1>
@@ -62,12 +93,18 @@ ul{line-height:1.8;}
 
 <section>
 
-  <!-- English Section -->
-  <div class="lang">
-    <h2>Course Information (English)</h2>
+  <!-- Language Buttons -->
+  <div class="lang-buttons">
+    <button id="btn-en" onclick="showLang('en')">English</button>
+    <button id="btn-mr" onclick="showLang('mr')">मराठी</button>
+  </div>
+
+  <!-- English Content -->
+  <div id="en" class="lang">
+    <h2>Course Information</h2>
     <p>
       MS-CIT is a government-recognized computer literacy course in Maharashtra.
-      It provides practical knowledge of computers and digital skills.
+      It provides practical digital skills for students.
     </p>
 
     <h3>What You Will Learn</h3>
@@ -76,32 +113,32 @@ ul{line-height:1.8;}
       <li>MS Word, Excel, PowerPoint</li>
       <li>Internet & Email</li>
       <li>Online Services</li>
-      <li>Introduction to AI Tools</li>
+      <li>AI Tools Introduction</li>
     </ul>
 
     <p><strong>Duration:</strong> 3 Months</p>
-    <p><strong>Certificate:</strong> Government Approved MS-CIT Certificate</p>
+    <p><strong>Certificate:</strong> Government Approved</p>
   </div>
 
-  <!-- Marathi Section -->
-  <div class="lang">
-    <h2>कोर्स माहिती (मराठी)</h2>
+  <!-- Marathi Content -->
+  <div id="mr" class="lang">
+    <h2>कोर्स माहिती</h2>
     <p>
       MS-CIT हा महाराष्ट्र शासन मान्यताप्राप्त संगणक कोर्स आहे.
-      या कोर्सद्वारे संगणकाचे मूलभूत व आधुनिक ज्ञान मिळते.
+      या कोर्समुळे विद्यार्थ्यांना डिजिटल कौशल्ये मिळतात.
     </p>
 
     <h3>या कोर्समध्ये काय शिकाल?</h3>
     <ul>
       <li>संगणकाची मूलतत्त्वे</li>
       <li>MS Word, Excel, PowerPoint</li>
-      <li>Internet व Email वापर</li>
+      <li>Internet व Email</li>
       <li>Online सेवा</li>
       <li>AI Tools ची ओळख</li>
     </ul>
 
     <p><strong>कालावधी:</strong> ३ महिने</p>
-    <p><strong>प्रमाणपत्र:</strong> अधिकृत MS-CIT प्रमाणपत्र</p>
+    <p><strong>प्रमाणपत्र:</strong> शासन मान्यताप्राप्त</p>
   </div>
 
   <a class="back" href="index.html">← Back to Home</a>
